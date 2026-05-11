@@ -192,9 +192,9 @@ CREATE INDEX IF NOT EXISTS idx_request_responses_donor_id ON request_responses(d
 -- =====================
 INSERT INTO hospitals (name, address, phone, latitude, longitude, has_blood_bank, blood_groups_available)
 VALUES
-  ('City General Hospital', '12 Main Street, Downtown', '+1-555-0101', 40.7128, -74.0060, true, ARRAY['A+','A-','B+','B-','O+','O-','AB+','AB-']),
+  ('Gopalganj City Care', '12 Main Street, Downtown', '+1-555-0101', 40.7128, -74.0060, true, ARRAY['A+','A-','B+','B-','O+','O-','AB+','AB-']),
   ('St. Mary Medical Center', '45 Oak Avenue, Midtown', '+1-555-0202', 40.7589, -73.9851, true, ARRAY['A+','B+','O+','AB+']),
-  ('Regional Blood Bank', '88 Health Blvd, Eastside', '+1-555-0303', 40.6892, -73.9442, true, ARRAY['O-','O+','A-','A+','B-','B+','AB-','AB+']),
+  ('Mercy Life', '88 Health Blvd, Eastside', '+1-555-0303', 40.6892, -73.9442, true, ARRAY['O-','O+','A-','A+','B-','B+','AB-','AB+']),
   ('Mercy Hospital', '3 Riverside Drive, Uptown', '+1-555-0404', 40.7831, -73.9712, false, ARRAY['A+','O+','B+']),
   ('Northside Clinic', '221 North Park Blvd', '+1-555-0505', 40.7282, -74.0776, true, ARRAY['A+','A-','O+','O-'])
 ON CONFLICT DO NOTHING;
