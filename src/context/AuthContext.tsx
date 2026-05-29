@@ -39,7 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       else setLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
@@ -66,6 +66,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         latitude: profileData.latitude ?? null,
         longitude: profileData.longitude ?? null,
         is_available: false,
+        // New fields with defaults
+        trust_score: 50,
+        account_tier: 'public',
+        aadhaar_verified: false,
+        city: '',
+        total_donations: 0,
+        current_streak: 0,
+        last_donation_date: null,
       });
       if (profileError) return { error: profileError };
       await fetchProfile(data.user.id);
